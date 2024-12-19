@@ -7,10 +7,8 @@ SET alamat = 'Jl. Raya No.5'
 WHERE nim = '123456';
 
 2. Tampilkan NIM, nama, dan jurusan dari mahasiswa yang memiliki jurusan ‘Teknik Informatika’, serta tampilkan juga nama dosen pembimbingnya
-SELECT m.nim, m.nama, m.jurusan, d.nama_dosen
-FROM mahasiswa m
-JOIN dosen d ON m.dosen_id = d.dosen_id
-WHERE m.jurusan = 'Teknik Informatika';
+SELECT m.nim, m.nama, m.jurusan, d.dosen_pengajar FROM mahasiswa m 
+JOIN mata_kuliah d ON m.jurusan = d.mata_kuliah WHERE m.jurusan = 'Teknik Informatika';
 
 3. Tampilkan 5 nama mahasiswa dengan umur tertua
 SELECT nama
