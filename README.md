@@ -17,8 +17,5 @@ ORDER BY umur DESC
 LIMIT 5;
 
 4. Tampilkan nama mahasiswa, mata kuliah yang diambil, dan nilai yang diperoleh untuk setiap mata kuliah. Hanya tampilkan data mahasiswa yang memiliki nilai lebih bagus dari 70
-SELECT m.nama, mk.nama_mk, nm.nilai
-FROM mahasiswa m
-JOIN nilai_mahasiswa nm ON m.nim = nm.nim
-JOIN mata_kuliah mk ON nm.kode_mk = mk.kode_mk
-WHERE nm.nilai > 70;
+SELECT m.nama, mk.mata_kuliah , mk.nilai FROM mahasiswa m JOIN mata_kuliah mk ON m.nim = m.nim 
+JOIN mata_kuliah  ON m.jurusan = mk.mata_kuliah WHERE mk.nilai > 70;
